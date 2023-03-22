@@ -3,7 +3,6 @@ import {
   OutputUpdateProductDto,
 } from "./update.product.dto";
 import ProductRepositoryInterface from "../../../domain/product/repository/product-repository.interface";
-import ProductFactory from "../../../domain/product/factory/product.factory";
 import Product from "../../../domain/product/entity/product";
 
 export default class UpdateProductUseCase {
