@@ -37,14 +37,14 @@ describe("Test update product use case", () => {
 
     const input: InputUpdateProductDto = {
       id: "123",
-      name: "Product 1",
-      price: 50,
+      name: "Product 2",
+      price: 100,
     };
 
     const output: OutputUpdateProductDto = {
       id: "123",
-      name: "Product 1",
-      price: 50,
+      name: "Product 2",
+      price: 100,
     };
 
     const result = await usecase.execute(input);

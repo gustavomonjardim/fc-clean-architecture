@@ -9,7 +9,7 @@ const product = new Product("123", "Product 1", 50);
 
 const MockRepository = () => {
   return {
-    find: jest.fn(),
+    find: jest.fn().mockReturnValue(Promise.resolve(product)),
     findAll: jest.fn(),
     create: jest.fn(),
     update: jest.fn(),
@@ -23,14 +23,14 @@ describe("Unit Test update product use case", () => {
 
     const input: InputUpdateProductDto = {
       id: "123",
-      name: "Product 1",
-      price: 50,
+      name: "Product 2",
+      price: 100,
     };
 
     const output: OutputUpdateProductDto = {
       id: "123",
-      name: "Product 1",
-      price: 50,
+      name: "Product 2",
+      price: 100,
     };
 
     const result = await usecase.execute(input);
@@ -45,8 +45,8 @@ describe("Unit Test update product use case", () => {
 
     const input: InputUpdateProductDto = {
       id: "123",
-      name: "Product 1",
-      price: 50,
+      name: "Product 2",
+      price: 100,
     };
 
     productRepository.update.mockRejectedValue(new Error("Product not found"));
